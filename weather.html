@@ -1,0 +1,48 @@
+
+<!doctype html>
+<html lang="en-us" ng-app="appWeather">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MDMS - Weather App</title>
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/picnic/6.1.1/picnic.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
+    <link rel="stylesheet" type="text/css" href="Styles/mainStyle.css">
+</head>
+<body>    
+    <div ng-controller="mainController"> 
+        <article class="card">
+        <header>
+            <h3>{{headerCityZip}}</h3>
+        </header>
+        <div class="pure-g WeatherForecast">
+            <div class="pure-u-1-2 skycon_cls">                
+                <canvas class="SkyConIs" width="75" height="85"></canvas>
+            </div>
+            <div class="pure-u-1-2">
+                <span class="degree_cls">{{Temp | number:0}}&deg;</span>
+                <br>
+                <span>{{NowSummary}}.</span>
+                <br>
+                <span>
+                    Feels like <span class="feelsLike_cls">{{FeelsLike | number:0}}&deg;</span>
+                </span>
+            </div>            
+        </div>
+        <footer>
+            <p><span>{{DailySummary}}</span></p>
+        </footer>
+        </article>
+    </div>
+    <!--Scripts-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/skycons/1396634940/skycons.min.js"></script>
+    <script src="app.js"></script>
+    <script src="Controllers/mainController.js"></script>
+    <script src="Services/ForecastIOService.js"></script>
+    <script src="Services/PageReloadFactory.js"></script>
+    <script src="Services/SecretsService.js"></script>
+</body>
+</html>
