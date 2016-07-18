@@ -34,7 +34,33 @@
             <p><span>{{DailySummary}}</span></p>
         </footer>
         </article>
+
+        <div class="tabs two">
+            <input id='tab-1' type='radio' name='tabgroupB' checked />
+            <label class="pseudo button toggle" for="tab-1">Hourly</label>
+            <input id='tab-2' type='radio' name='tabgroupB'>
+            <label class="pseudo button toggle" for="tab-2">Daily</label>
+            <div class="row">
+                {#<div>
+                    <img src="web/img/lake.jpg">
+                </div>#}
+                {#Hourly#}
+                <div>     
+                    {{DailyDays[0].time}}   
+                    <table class="pure-table pure-table-horizontal">                        
+                        <tbody>
+                            <tr ng-repeat="thisDay in DailyDays">                                
+                                <th>{{thisDay.time * 1000 | date:'EEE MM/dd'}} </th>
+                                <td>Max. {{thisDay.temperatureMax | number:0}}&deg;</td>
+                                <td>Min. {{thisDay.temperatureMin | number:0}}&deg;</td>
+                            </tr>                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
+
     <!--Scripts-->
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>

@@ -29,9 +29,11 @@
           var Forecast_return = ForecastIOService.getForecast($scope.Forecast_secrets);
           Forecast_return.then(function(data){
             $scope.Forecast_data = data;
-              //console.log($scope.Forecast_data);
+              console.log($scope.Forecast_data);
               //console.log($scope.Forecast_data.data.currently);
               //console.log($scope.Forecast_data.data.daily);
+              
+              /* Weather now widget */
               //Currently
               var Forecast_currently = $scope.Forecast_data.data.currently;
               $scope.NowSummary = Forecast_currently.summary;
@@ -45,6 +47,10 @@
               $scope.MaxTemp_Time = Forecast_daily.temperatureMaxTime;
               $scope.MinTemp = Forecast_daily.temperatureMin;
               $scope.MinTemp_Time = Forecast_daily.temperatureMinTime;
+
+              /* Weather detailed */ 
+              $scope.DailyDays = $scope.Forecast_data.data.daily.data;
+              
 
               //Skycon
               var Skycon = new Skycons({
