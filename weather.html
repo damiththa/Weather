@@ -51,8 +51,9 @@
                         <tbody>
                             <tr ng-repeat="thisDay in DailyDays">                                
                                 <th>{{thisDay.time * 1000 | date:'EEE MM/dd'}} </th>
-                                <td>Max. {{thisDay.temperatureMax | number:0}}&deg;</td>
-                                <td>Min. {{thisDay.temperatureMin | number:0}}&deg;</td>
+                                <td>{{thisDay.icon}}</td>
+                                <td><strong>{{thisDay.temperatureMax | number:0}}&deg;</strong></td>
+                                <td>{{thisDay.temperatureMin | number:0}}&deg;</td>
                             </tr>                           
                         </tbody>
                     </table>
