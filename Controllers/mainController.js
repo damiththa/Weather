@@ -47,11 +47,6 @@
               $scope.MaxTemp_Time = Forecast_daily.temperatureMaxTime;
               $scope.MinTemp = Forecast_daily.temperatureMin;
               $scope.MinTemp_Time = Forecast_daily.temperatureMinTime;
-
-              /* Weather detailed */ 
-              $scope.DailyDays = $scope.Forecast_data.data.daily.data;
-              
-
               //Skycon
               var Skycon = new Skycons({
                 "color": "#666"
@@ -60,6 +55,11 @@
                 elements = angular.element(document.getElementsByClassName('SkyConIs'));
               Skycon.set(elements[0], weatherType);
               Skycon.play();
+
+              /* Weather detailed */ 
+              $scope.DailyDays = $scope.Forecast_data.data.daily.data;
+              
+
           });
         };
 
